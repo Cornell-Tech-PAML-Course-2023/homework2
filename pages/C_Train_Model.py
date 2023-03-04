@@ -397,7 +397,7 @@ if df is not None:
 
     st.write('Saving dataset to paml_dataset.csv')
     st.download_button(
-        label="Download data as CSV",
+        label="Train: Download data as CSV",
         data=csv,
         file_name='paml_dataset.csv',
         mime='text/csv',        
