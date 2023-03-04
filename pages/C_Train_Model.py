@@ -1,11 +1,9 @@
 import numpy as np                      # pip install numpy
 import pandas as pd                     # pip install pandas
-import matplotlib.pyplot as plt        # pip install matplotlib
-from sklearn.model_selection import train_test_split
+import matplotlib.pyplot as plt         # pip install matplotlib
 import streamlit as st                  # pip install streamlit
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
-from pages.A_Explore_Dataset import fetch_dataset
 from pages.B_Preprocess_Data import remove_nans
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import PolynomialFeatures

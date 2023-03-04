@@ -181,7 +181,7 @@ if df is not None:
     
     # Specify Input Parameters
 
-    # Collect user plot selection
+    # Collect user plot selection using user_input_features()
 
     # Draw plots
 
