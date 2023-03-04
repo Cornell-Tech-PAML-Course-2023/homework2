@@ -36,7 +36,7 @@ The <b>learning outcomes</b> for this assignment are:
 
 # End-to-End Regression Models for Housing Prices 
 
-# California Housing Data
+## California Housing Data
 
 This assignment involves testing the end-to-end pipeline in a web application using a California Housing dataset from the textbook: Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow. O’Reilly Media, Inc., 2022. The dataset was captured from California census data in 1990. We have added additional features to the dataset. The features include:
 * longitude - longitudinal coordinate
@@ -203,9 +203,9 @@ Use the following functions in plot_learning_curve()
 
 ## Task 21 (Checkpoint 9): Display Evaluation Results.
 
-Display tables summarizing the results in terms of evaluation metrics by regression model for selected metrics.  Write a function compute_eval_metrics() using the st.dataframe() to display results in tables. This function computes the RMSE, MAE, and R2 score for the selected model and metrics from Task 20. Your goal is to populate the metricl_dict with the metric name as a key and the computed results as values. See the HW2 code for inputs and outputs.
+Write a function called compute_eval_metrics() to display tables summarizing the results in terms of evaluation metrics by regression model for selected metrics. This function computes the RMSE, MAE, and R2 score for the selected model and metrics from Task 20. Your goal is to populate the metricl_dict with the metric name as a key and the computed results as values. See the HW2 code for inputs and outputs.
 
-## Task 22 (Checkpoint 10): Deploy Model
+## Task 22 (Checkpoint 10): Deploy Model (1 point)
 
 Before deploying the application, train regression models using the following features: number_bedrooms, number_bathrooms, and ocean_proximity. Then, deploy a regression model with best performance out of the four models implemented including multiple regression, polynomial regression, and ridge regression, and lasso regression for a given metric. Provide the user the option to select a regression model based on the evaluation results to use for deployment performance using the st.selectbox() function to create a menu for selecting a single item. 
 
@@ -217,7 +217,7 @@ Create a California Housing Price application that collects a user's housing pre
 
 Write a function called deploy_model() which tests a regression model with best performance out of all regression models for a given metric. Use the deployment model selected on the ‘Test Model’ page to train the specified regression model and hyperparameters.  The next element shown on the web application is a map of California showing the available house listings.
 
-The web application will show the predicted housing price and state whether they can afford it base don their budget.
+The web application will show the predicted housing price and state whether they can afford it based on their budget.
 
 $ Testing Code with Github Autograder
 
