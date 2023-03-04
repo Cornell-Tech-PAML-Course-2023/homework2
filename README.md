@@ -139,11 +139,6 @@ Use the following function(s) for create_feature():
 * np.ceil() - rounds float values up
 * np.floor() - rounds float values down 
 
-The following functions are used for input to create_feature():
-st.text_input() - function that displays a text field and a user to input text. Collect user input to name the new feature.
-st.button() - function that creates a button. Create a button to create the new feature.
-st.selectbox() - function that creates a menu for selecting a single item. Create a menu with the integer and one-hot encoding.
-
 <b>Task 11</b>: Summarize descriptive statistics. Feel free to reuse code from HW1.  
 
 # Train Regression Models (7 points)
@@ -166,17 +161,6 @@ A = df.loc[:, df.columns.isin(feature)] # collects columns with the feature name
 B = df.loc[:, ~df.columns.isin(feature)] # collects columns without the feature name
 ```
 
-Use the following functions:
-* st.multiselect() - function that creates a menu for selecting multiple items. Create a menu with features from the dataset as options for regression output.
-* st.selectbox() - function that creates a menu for selecting a single item. Create a menu of regression models to train with options: multiple regression, polynomial regression, and ridge regression, and lasso regression.
-
-Use the following functions for Task 14-17:
-st.multiselect() - function that creates a menu for selecting multiple items. Create a menu with the four regression models as options.
-* st.selectbox() - function that creates a menu for selecting a single item. Create a menu with the four regression models as options. 
-* st.text_input() - function that displays a text field and a user to input text. Collect user input for integer parameters (e.g., polynomial degree).
-* st.number_input() - function that displays a text field and a user to input a number. Collect user input for integer parameters (e.g., polynomial degree).
-* st.button() - function that creates a button. Create a button to start training the models.
-
 ## Task 14: Train Multiple Regressoon Model
 
 Write a function called train_multiple_regression() that trains a multiple regression regression model to predict an output variable (i.e., housing prices). Add a button to call the train_multiple_regression() function and train the model using Sklearn library: linear_model.LinearRegression(). See the HW2 code for inputs and outputs.
@@ -185,30 +169,13 @@ Write a function called train_multiple_regression() that trains a multiple regre
 
 Write a function called train_polynomial_regression() that trains a polynomial regression regression model to predict an output variable (i.e., housing prices). Then, display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters including degrees and include_bias.  Then, add a button to call the train_polynomial_regression() function and train the model with Sklearn library: linear_model, preprocessing.PolynomialFeatures or Pipeline. See the HW2 code for inputs and outputs.
 
-Use the following functions to collect input from the web app:
-* st.number_input to select number of degrees
-* st.checkbox to include bias
-* st.button that calls function to train polynomial regression models
-
 ## Task 16: Train Ridge Regressoon Model with Cross Validation
 
-Write a function called train_ridge_regression that uses cross validation to train a ridge regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters alpha, solver, and n_folds.  Then, add a button to call the train_ridge_regression function and train the model using Sklearn library: linear_model.Ridge() or Pipeline. See the HW2 code for inputs and outputs.
-
-The following functions are used to collect input from the web app:
-* st.number_input to select number of folds
-* st.multiselect solver methods including: 'auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'
-* st.text_input to select alpha values separated by a comma 
-* st.button that calls function to train ridge models
+Write a function called train_ridge_regression that uses cross validation to train a ridge regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters alpha, solver ('auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'), and n_folds.  Then, add a button to call the train_ridge_regression function and train the model using Sklearn library: linear_model.Ridge() or Pipeline. See the HW2 code for inputs and outputs.
 
 ## Task 17: Train Polynomial Regressoon Model
 
 Write a function called train_lasso_regression that uses cross validation (CV) to train a lasso regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires input parameters including tol, alpha, n_folds.  Then, add a button to call the train_lasso_regression function and train the model using Sklearn library: linear_model.Lasso() or Pipeline. See the HW2 code for inputs and outputs.
-
-Use the following functions to collect input from the web app:
-* st.number_input to select number of folds - used to enter number of folds for CV
-* st.text_input to select tolerance values separated by a comma Enter alpha values for evaluation - used to enter tolerance values for evaluation 
-* st.text_input to select alpha values separated by a comma 
-* st.button that calls function to train lasso models - used to train lasso models 
 
 ## Task 18 (Checkpoint 7): Inspect Regression coefficients
 
@@ -226,11 +193,6 @@ Provide users with the option to select up to three metrics for evaluation and w
 
 Write a function called calculate_metrics() that takes the predicted and actual housing values as input and returns the metrics for each method using the following: See the HW2 code for inputs and outputs.
 
-Use the following functions to collect input from the web app:
-* st.multiselect menu with metrics as options
-* st.multiselect menu with trained regression models as options
-* st.button that calls calculate_metrics() function to evaluate models
-
 ## Task 20 (Checkpoint 8): Plot Learning Curves
 
 Write a function plot_learning_curve() that displays figures summarizing learning curves that show predicted housing prices vs the training set size (error vs. training set size). See the HW2 code for inputs and outputs.
@@ -238,10 +200,6 @@ Write a function plot_learning_curve() that displays figures summarizing learnin
 Use the following functions in plot_learning_curve()
 * st.plotly_chart() - used to display learning curves. 
 * Plotly.subplots make_plots() function to create learning curve plots. Use the fig.add_trace() function to plot training and validation curves. 
-
-Use the following functions to collect input from the web app:
-* st.multiselect() - function that creates a menu for selecting a trained model to evaluate.
-* st.multiselect() - function that creates a menu for selecting a ‘Learning Curve’ and ‘Metric Results’. 
 
 ## Task 21 (Checkpoint 9): Display Evaluation Results.
 
