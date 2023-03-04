@@ -62,19 +62,25 @@ The Github repository contains two datasets in the dataset directory:
 
 Your goal is to build on the system you developed from homework 1 and additional options to explore datasets.
 
-## Task 1 
+## Task 1: Import or restore a dataset and display it 
 
-Import or restore a dataset and display it in a table. Your goal is to create two columns 1) upload a dataset from a file on your and 2) upload a dataset from a cloud source (specifically for HW2). Then, store the dataset in streamlit session state for later use. This task is repeated for all pages on the web application except Pages A_Explore Dataset and D_Deploy App. On Pages B - D, make sure to restore the dataset from st.session_state to avoid importing multiple times. Feel free to reuse code from HW1.
+Your goal is to create two columns 1) upload a dataset from a file on your and 2) upload a dataset from a cloud source (specifically for HW2). Then, store the dataset in streamlit session state for later use. This task is repeated for all pages on the web application except Pages A_Explore Dataset and D_Deploy App. On Pages B - D, make sure to restore the dataset from st.session_state to avoid importing multiple times. Feel free to reuse code from HW1.
 
-<b>Task 2</b>: Generate and show visualizations of features in the dataset. Display at most two features from the dataset in a scatterplot, boxplot, line plot, and histogram, depending on the plot. Once a plot has been selected, the visualization should update with the appropriate figure. Use the user_input_features function to collect filters for each figure and update the plot accordingly. Feel free to reuse code from HW1. 
+## Task 2: Generate and show visualizations of features in the dataset
 
-<b>Task 3</b> (Checkpoint 1): Show feature correlations. Write a function compute_correlation() that computes the correlation between two features specified by a user. Recall: Correlation is a quantitative measure of how much two variables/features are correlated ranging from -1 (negatively correlated) to 1 (positively correlated). Feel free to reuse code from HW1. In addition, include summary statements for each pair of features stating the magnitude and direction of correlation. For example, ‘Features median_house_age and median_housing_price are highly positively correlated.’ See the HW2 code for inputs and outputs.
+Generate and show visualizations of features in the dataset using a sidebar as done in HW1 (re-use code). 
+
+## Task 3 (Checkpoint 1): Show feature correlations
+
+Write a function compute_correlation() that computes the correlation between two features specified by a user. Recall: Correlation is a quantitative measure of how much two variables/features are correlated ranging from -1 (negatively correlated) to 1 (positively correlated). Feel free to reuse code from HW1. In addition, include summary statements for each pair of features stating the magnitude and direction of correlation. For example, ‘Features median_house_age and median_housing_price are highly positively correlated.’ See the HW2 code for inputs and outputs.
 
 # Preprocess and Prepare Data for Regression (8 points)
 
 Your goal is to build on the system you developed from HW1 and additional options to preprocess data. 
 
-<b>Task 4 (Checkpoint 2)</b>: Summarize missing or invalid data. Use Pandas function isna() to find the missing values in the dataset. Write a function called summarize_missing_data() that computes four statistics:
+## Task 4 (Checkpoint 2): Summarize missing or invalid data
+
+Use Pandas function isna() to find the missing values in the dataset. Write a function called summarize_missing_data() that computes four statistics:
 
 * Number of categories with missing values.
 * Average number of missing values per category. 
@@ -85,13 +91,21 @@ Feel free to reuse code from HW1 and the [‘Predicting Housing Prices’ notebo
 
 Task 5 and 6: Add two columns to the web application using st.columns() function, one for Task 6 and 7. 
 
-<b>Task 5</b>: Remove irrelevant/useless features. Collect a user's preferences on one or more features to remove using the st.multiselect() function. Add a button to remove irrelevant/useless values using the pd.drop() function. Feel free to reuse code from HW1.
+## Task 5: Remove irrelevant/useless features
 
-<b>Task 6 (Checkpoint 3)</b>: Remove Nans. Add a button to remove ‘Not a Number’ (Nan) values from the dataset which calls the remove_nans() using the pd.dropna()  function. Write a function called remove_nans() that returns a dataframe with Nans removed.
+Collect a user's preferences on one or more features to remove using the st.multiselect() function. Add a button to remove irrelevant/useless values using the pd.drop() function. Feel free to reuse code from HW1.
 
-<b>Task 7</b>: Impute data. Impute the dataset with one of the following options: 1) mean, 2) median, 3) zeros. Collect a user’s preference for one feature to impute imputation method (from previous sentence). Next, show the updated dataset showing the imputed datapoint updates. 
+## Task 6 (Checkpoint 3): Remove Nans
 
-<b>Task 8 (Checkpoint 4)</b>: Remove outliers. Remove outliers from the dataset using the InterQuartile Range (IQR), a commonly used approach for finding and removing outliers.
+Add a button to remove ‘Not a Number’ (Nan) values from the dataset which calls the remove_nans() using the pd.dropna()  function. Write a function called remove_nans() that returns a dataframe with Nans removed.
+
+## Task 7: Impute data 
+
+Impute the dataset with one of the following options: 1) mean, 2) median, 3) zeros. Collect a user’s preference for one feature to impute imputation method (from previous sentence). Next, show the updated dataset showing the imputed datapoint updates. 
+
+## Task 8 (Checkpoint 4): Remove outliers
+
+Remove outliers from the dataset using the InterQuartile Range (IQR), a commonly used approach for finding and removing outliers.
 
 Display a plot, as done in Task 2 to view a Scatter Plot, Boxplot, Line Plot, or Histogram to inspect features before removing outliers. Add a st.multiselect() menu with the numerical features as options using the code below, given that df is the Pandas dataframe containing the dataset. 
 ```
@@ -104,26 +118,31 @@ Write a function called remove_outliers() using the following function(s) (See t
 pd.dropna() - function that drops rows or columns with Nan values. Drop Nan values before removing outliers.
 np.percentile() - function that computes the q-th percentile of data along the specified axis. Using this function to compute the 25th and 75th percentile.
 
-<b>Task 9 (Checkpoint 5)</b>: Handling Text/Categorical Data. Encode categorical features with integer encoding and one-hot encoding and write one function for each encoding technique. Add a button for each method which calls the functions below for their respective functions.
+## Task 9 (Checkpoint 5): Handling Text/Categorical Data 
+
+Encode categorical features with integer encoding and one-hot encoding and write one function for each encoding technique. Add a button for each method which calls the functions below for their respective functions.
 
 Write a function called integer_encode_feature() using pd.get_dummies() function - converts categorical variables to indicator function (i.e., one-hot encoding). Then, use st.button() to create a button to run the function. See the HW2 code for inputs and outputs.
 
 Write a function called one_hot_encode_feature() using OrdinalEncoder fit_transform() - maps categorical variables to unique integers (i.e., integer encoding). Then, use st.button() to create a button to run the function. See the HW2 code for inputs and outputs.
 
-<b>Task 10 (Checkpoint 6)</b>: Create new features. Create new features using existing ones in the dataset using four mathematical operations including 1) addition, 2) subtraction, 3) multiplication, 4) division, and 5) square root, 6) ceil, and 7) floor. Collect two numerical features for the math operations using st.multiselect(), except square root which takes one feature as input using st.selectbox(). See example for collecting numerical columns below:  
+## Task 10 (Checkpoint 6): Create new features
+
+Create new features using existing ones in the dataset using four mathematical operations including 1) addition, 2) subtraction, 3) multiplication, 4) division, and 5) square root, 6) ceil, and 7) floor. Collect two numerical features for the math operations using st.multiselect(), except square root which takes one feature as input using st.selectbox(). See example for collecting numerical columns below:  
 ```
 numeric_columns = list(df.select_dtypes(include='number').columns)
 ```
 Write the create_feature() function that creates a new feature using the output. It takes a pandas dataframe, a list of mathematical operations to apply to one or more features, and a list of one (for square root) or two features (all other features). For example, a user can select to ‘add’ total_bedrooms and total_rooms then the function adds these two features, and names the feature with the feature name specified as input. See the HW2 code for inputs and outputs.
 
-Use the following function(s):
-* st.text_input() - function that displays a text field and a user to input text. Collect user input to name the new feature.
-* st.button() - function that creates a button. Create a button to create the new feature.
-* st.selectbox() - function that creates a menu for selecting a single item. Create a menu with the integer and one-hot encoding.
-* st.multiselect() - function that creates a menu for selecting multiple items. Create a menu with features from the dataset as options.
+Use the following function(s) for create_feature():
 * np.sqrt() - function that computes the square root of a number. Compute the square root of a feature when selected by the user.
 * np.ceil() - rounds float values up
 * np.floor() - rounds float values down 
+
+The following functions are used for input to create_feature():
+st.text_input() - function that displays a text field and a user to input text. Collect user input to name the new feature.
+st.button() - function that creates a button. Create a button to create the new feature.
+st.selectbox() - function that creates a menu for selecting a single item. Create a menu with the integer and one-hot encoding.
 
 <b>Task 11</b>: Summarize descriptive statistics. Feel free to reuse code from HW1.  
 
@@ -135,7 +154,9 @@ import random
 random.seed(10)
 ```
 
-<b>Task 12</b>: Set train/test split using your code from HW1. In addition, write a function called split_dataset() that splits the dataset into four parts, input and output training and test sets (e.g., X_train, X_val, y_train, y_val)using the following function(s):
+## Task 12: Set train/test split using your code from HW1. 
+
+In addition, write a function called split_dataset() that splits the dataset into four parts, input and output training and test sets (e.g., X_train, X_val, y_train, y_val)using the following function(s):
 number_input(): function that displays a text field and a user to input a number. Collect the test set size from the text field.
 Sklearn train_test_split() - function that splits that dataset into training and testing sets. Split the dataset into input X and output Y values for a training and test set.
 
@@ -156,24 +177,32 @@ st.multiselect() - function that creates a menu for selecting multiple items. Cr
 * st.number_input() - function that displays a text field and a user to input a number. Collect user input for integer parameters (e.g., polynomial degree).
 * st.button() - function that creates a button. Create a button to start training the models.
 
-<b>Task 14</b>: Write a function called train_multiple_regression() that trains a multiple regression regression model to predict an output variable (i.e., housing prices). Add a button to call the train_multiple_regression() function and train the model using Sklearn library: linear_model.LinearRegression(). See the HW2 code for inputs and outputs.
+## Task 14: Train Multiple Regressoon Model
 
-<b>Task 15</b>: Write a function called train_polynomial_regression() that trains a polynomial regression regression model to predict an output variable (i.e., housing prices). Then, display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters including degrees and include_bias.  Then, add a button to call the train_polynomial_regression() function and train the model with Sklearn library: linear_model, preprocessing.PolynomialFeatures or Pipeline. See the HW2 code for inputs and outputs.
+Write a function called train_multiple_regression() that trains a multiple regression regression model to predict an output variable (i.e., housing prices). Add a button to call the train_multiple_regression() function and train the model using Sklearn library: linear_model.LinearRegression(). See the HW2 code for inputs and outputs.
+
+## Task 15: Train Polynomial Regressoon Model
+
+Write a function called train_polynomial_regression() that trains a polynomial regression regression model to predict an output variable (i.e., housing prices). Then, display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters including degrees and include_bias.  Then, add a button to call the train_polynomial_regression() function and train the model with Sklearn library: linear_model, preprocessing.PolynomialFeatures or Pipeline. See the HW2 code for inputs and outputs.
 
 Use the following functions to collect input from the web app:
 * st.number_input to select number of degrees
 * st.checkbox to include bias
 * st.button that calls function to train polynomial regression models
 
-<b>Task 16</b>: Write a function called train_ridge_regression that uses cross validation to train a ridge regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters alpha, solver, and n_folds.  Then, add a button to call the train_ridge_regression function and train the model using Sklearn library: linear_model.Ridge() or Pipeline. See the HW2 code for inputs and outputs.
+## Task 16: Train Ridge Regressoon Model with Cross Validation
 
-Use the following functions to collect input from the web app:
+Write a function called train_ridge_regression that uses cross validation to train a ridge regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires model parameters alpha, solver, and n_folds.  Then, add a button to call the train_ridge_regression function and train the model using Sklearn library: linear_model.Ridge() or Pipeline. See the HW2 code for inputs and outputs.
+
+The following functions are used to collect input from the web app:
 * st.number_input to select number of folds
 * st.multiselect solver methods including: 'auto', 'svd', 'cholesky', 'lsqr', 'sparse_cg', 'sag', 'saga', 'lbfgs'
 * st.text_input to select alpha values separated by a comma 
 * st.button that calls function to train ridge models
 
-<b>Task 17</b>: Write a function called train_lasso_regression that uses cross validation (CV) to train a lasso regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires input parameters including tol, alpha, n_folds.  Then, add a button to call the train_lasso_regression function and train the model using Sklearn library: linear_model.Lasso() or Pipeline. See the HW2 code for inputs and outputs.
+## Task 17: Train Polynomial Regressoon Model
+
+Write a function called train_lasso_regression that uses cross validation (CV) to train a lasso regression regression model to predict housing prices and display the training performance in terms of the metrics selected by users. Create a parameter input panel for each method that requires input parameters including tol, alpha, n_folds.  Then, add a button to call the train_lasso_regression function and train the model using Sklearn library: linear_model.Lasso() or Pipeline. See the HW2 code for inputs and outputs.
 
 Use the following functions to collect input from the web app:
 * st.number_input to select number of folds - used to enter number of folds for CV
@@ -181,11 +210,15 @@ Use the following functions to collect input from the web app:
 * st.text_input to select alpha values separated by a comma 
 * st.button that calls function to train lasso models - used to train lasso models 
 
-<b>Task 18 (Checkpoint 7)</b>: Inspect Regression coefficients. Write a function called inspect_coefficients() that takes all trained regression models as input and returns their respective coefficients. The Sklearn library implements both closed-form and gradient descent solutions to generate regression coefficients. The coefficients can be inspected using the coef_ and intercept_ attributes (see example below). Once one or more regression models have been trained, display the regression coefficients to be used for inspection (use for reflection assessment). Use st.multiselect menu with features as options - used to select features for regression input.
+## Task 18 (Checkpoint 7): Inspect Regression coefficients
+
+Write a function called inspect_coefficients() that takes all trained regression models as input and returns their respective coefficients. The Sklearn library implements both closed-form and gradient descent solutions to generate regression coefficients. The coefficients can be inspected using the coef_ and intercept_ attributes (see example below). Once one or more regression models have been trained, display the regression coefficients to be used for inspection (use for reflection assessment). Use st.multiselect menu with features as options - used to select features for regression input.
 
 # Test Regression Models (4 points)
 
-<b>Task 19</b>: Provide users with the option to select up to three metrics for evaluation and with the option to select multiple trained models:
+## Task 19: Evalaute models with performance metrics.
+
+Provide users with the option to select up to three metrics for evaluation and with the option to select multiple trained models:
 
 * Root mean squared error (RMSE) measures the difference between predicted and actual values using Euclidean distance. Use Sklearn mean_squared_error() function that computes mean squared error (squared=True) and root mean squared error (squared=False).
 * Mean absolute error (MAE) measures the absolute difference between predicted and actual values. Use Sklearn mean_absolute_error() function that computes mean absolute error.
@@ -198,7 +231,9 @@ Use the following functions to collect input from the web app:
 * st.multiselect menu with trained regression models as options
 * st.button that calls calculate_metrics() function to evaluate models
 
-<b>Task 20 (Checkpoint 8)</b>: Write a function plot_learning_curve() that displays figures summarizing learning curves that show predicted housing prices vs the training set size (error vs. training set size). See the HW2 code for inputs and outputs.
+## Task 20 (Checkpoint 8): Plot Learning Curves
+
+Write a function plot_learning_curve() that displays figures summarizing learning curves that show predicted housing prices vs the training set size (error vs. training set size). See the HW2 code for inputs and outputs.
 
 Use the following functions in plot_learning_curve()
 * st.plotly_chart() - used to display learning curves. 
@@ -208,30 +243,23 @@ Use the following functions to collect input from the web app:
 * st.multiselect() - function that creates a menu for selecting a trained model to evaluate.
 * st.multiselect() - function that creates a menu for selecting a ‘Learning Curve’ and ‘Metric Results’. 
 
-<b>Task 21 (Checkpoint 9)</b>: Display tables summarizing the results in terms of evaluation metrics by regression model for selected metrics.  Write a function compute_eval_metrics() using the st.dataframe() to display results in tables. This function computes the RMSE, MAE, and R2 score for the selected model and metrics from Task 20. Your goal is to populate the metricl_dict with the metric name as a key and the computed results as values. See the HW2 code for inputs and outputs.
+## Task 21 (Checkpoint 9): Display Evaluation Results.
 
-<b>Task 23 (Checkpoint 10)</b>: Before deploying the application, train regression models using the following features: number_bedrooms, number_bathrooms, and ocean_proximity. Then, deploy a regression model with best performance out of the four models implemented including multiple regression, polynomial regression, and ridge regression, and lasso regression for a given metric. Provide the user the option to select a regression model based on the evaluation results to use for deployment performance using the st.selectbox() function to create a menu for selecting a single item. 
+Display tables summarizing the results in terms of evaluation metrics by regression model for selected metrics.  Write a function compute_eval_metrics() using the st.dataframe() to display results in tables. This function computes the RMSE, MAE, and R2 score for the selected model and metrics from Task 20. Your goal is to populate the metricl_dict with the metric name as a key and the computed results as values. See the HW2 code for inputs and outputs.
+
+## Task 22 (Checkpoint 10): Deploy Model
+
+Before deploying the application, train regression models using the following features: number_bedrooms, number_bathrooms, and ocean_proximity. Then, deploy a regression model with best performance out of the four models implemented including multiple regression, polynomial regression, and ridge regression, and lasso regression for a given metric. Provide the user the option to select a regression model based on the evaluation results to use for deployment performance using the st.selectbox() function to create a menu for selecting a single item. 
 
 # Deploy ML Application (3 points)
 
 Create a California Housing Price application that collects a user's housing preferences to use for predicting housing prices. Once a user provides their preferences, deploy a regression model with the best performance given a pre-defined metric from Task 19.
 
-<b>Task 22</b>: Collect users housing preferences to used as features for regression including:
+## Task 23 (Checkpoint 11): Deploy Model in Housing Application
 
-* Number of bedrooms
-* Number of bathrooms
-* Desired city
-* Proximity to water
+Write a function called deploy_model() which tests a regression model with best performance out of all regression models for a given metric. Use the deployment model selected on the ‘Test Model’ page to train the specified regression model and hyperparameters.  The next element shown on the web application is a map of California showing the available house listings.
 
-<b>Task 23 (Checkpoint 11)</b>: Write a function called deploy_model() which tests a regression model with best performance out of all regression models for a given metric. Use the deployment model selected on the ‘Test Model’ page to train the specified regression model and hyperparameters.  The next element shown on the web application is a map of California showing the available house listings.
-
-<b>Task 24</b>: Use the selected regression model to show housing prices along with a description of it including:
-
-* Housing price 
-* Number of bedrooms
-* Number of bathrooms
-* City
-* Proximity to the water
+The web application will show the predicted housing price and state whether they can afford it base don their budget.
 
 $ Testing Code with Github Autograder
 
