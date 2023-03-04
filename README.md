@@ -11,7 +11,7 @@ The <b>learning outcomes</b> for this assignment are:
 * Develop a web application that offers a service to customers by predicting housing prices using regression models. 
 
 # Assignment Deadline:
-* Due:  Friday March 17, 2023 at 11:59PM 
+* Due:  Friday March 18, 2023 at 11:00PM 
 * What to turn in: Submit responses on GitHub AutoGrader
 * Assignment Type: Individual
 * Time Estimate: 18 Hours
@@ -24,7 +24,7 @@ The <b>learning outcomes</b> for this assignment are:
 * Testing Code with Github Autograder
 * Reflection Assessment
 
-# Reading Prerequisite 
+# Reading Prerequisites 
 
 * Review the jupyter notebook in Chapter 4 Training Models of “Machine Géron, Aurélien. Hands-on machine learning with Scikit-Learn, Keras, and TensorFlow.” O’Reilly Media, Inc., 2022. (Available on Canvas->Library Reserves). We will build on that example.
 * Review [HW2 Web App Design Slides](https://cornell.box.com/s/dgt5gpp6kiu58n6u6jg24y4k6aqcotfp).
@@ -62,7 +62,9 @@ The Github repository contains two datasets in the dataset directory:
 
 Your goal is to build on the system you developed from homework 1 and additional options to explore datasets.
 
-<b>Task 1</b>: Import or restore a dataset and display it in a table. Your goal is to create two columns 1) upload a dataset from a file on your and 2) upload a dataset from a cloud source (specifically for HW2). Then, store the dataset in streamlit session state for later use. This task is repeated for all pages on the web application except Pages A_Explore Dataset and D_Deploy App. On Pages B - D, make sure to restore the dataset from st.session_state to avoid importing multiple times. Feel free to reuse code from HW1.
+## Task 1 
+
+Import or restore a dataset and display it in a table. Your goal is to create two columns 1) upload a dataset from a file on your and 2) upload a dataset from a cloud source (specifically for HW2). Then, store the dataset in streamlit session state for later use. This task is repeated for all pages on the web application except Pages A_Explore Dataset and D_Deploy App. On Pages B - D, make sure to restore the dataset from st.session_state to avoid importing multiple times. Feel free to reuse code from HW1.
 
 <b>Task 2</b>: Generate and show visualizations of features in the dataset. Display at most two features from the dataset in a scatterplot, boxplot, line plot, and histogram, depending on the plot. Once a plot has been selected, the visualization should update with the appropriate figure. Use the user_input_features function to collect filters for each figure and update the plot accordingly. Feel free to reuse code from HW1. 
 
