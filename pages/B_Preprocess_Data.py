@@ -137,7 +137,7 @@ def create_feature(df, math_select, math_feature_select, new_feature_name):
     return df
 
 # Complete this helper function from HW1
-def create_feature(X, stats_feature_select, stats_select):
+def compute_descriptive_stats(X, stats_feature_select, stats_select):
     """
     This function computes some statistical values of the selected features
 
