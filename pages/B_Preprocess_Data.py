@@ -431,7 +431,10 @@ if df is not None:
             df, stats_feature_select, stats_select)
 
     # Display updated dataframe
-    st.session_state['data'] = df
+    # Add code here ...
+    
+    # Store dataset in st.session_state
+    # Add code here ...
 
     ###################### DOWNLOAD DATASET #######################
     st.markdown('### Download the dataset')

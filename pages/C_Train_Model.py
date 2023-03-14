@@ -131,6 +131,10 @@ def train_polynomial_regression(X_train, y_train, regression_methods_options, po
     # Train model. Handle errors with try/except statement
     # Add code here
 
+    # Store model in st.session_state[model_name]
+    # Add code here ...
+
+
     st.write('train_polynomial_regression not implemented yet.')
     return poly_reg_model
 
@@ -153,6 +157,9 @@ def train_ridge_regression(X_train, y_train, regression_methods_options, ridge_p
     # Train model. Handle errors with try/except statement
     # Add code here
 
+    # Store model in st.session_state[model_name]
+    # Add code here
+
     st.write('train_ridge_regression not implemented yet.')
     return ridge_cv
 
@@ -173,6 +180,9 @@ def train_lasso_regression(X_train, y_train, regression_methods_options, lasso_p
     lasso_cv=None
     
     # Train model. Handle errors with try/except statement
+    # Add code here
+
+    # Store model in st.session_state[model_name]
     # Add code here
 
     st.write('train_lasso_regression not implemented yet.')
@@ -386,6 +396,10 @@ if df is not None:
     for model_name in inspect_models:
         models[model_name] = st.session_state[model_name]
     coefficients = inspect_coefficients(models, inspect_models)
+
+    # Store dataset in st.session_state
+    # Add code here ...
+
 
     ###################### DOWNLOAD DATASET #######################
     st.markdown('### Download the dataset')

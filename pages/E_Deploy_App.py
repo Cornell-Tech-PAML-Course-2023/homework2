@@ -73,11 +73,15 @@ def decode_integer(original_df, decode_df, feature_name):
 ###################### FETCH DATASET #######################
 
 df = None
-if 'data' in st.session_state:
-    # df = ... Add code here: read in data and store in st.session_state
-    st.write('Data import not implemented yet.')
-else:
-    st.write('### The Housing Price Application is under construction. Coming to you soon.')
+
+
+# Restore model from st.session_state[model_name]
+# Fill in code below
+#if 'data' in st.session_state:
+#    # df = ... Add code here: read in data and store in st.session_state
+#    st.write('Data import not implemented yet.')
+#else:
+#    st.write('### The Housing Price Application is under construction. Coming to you soon.')
 
 ###################### Deploy App #######################
 

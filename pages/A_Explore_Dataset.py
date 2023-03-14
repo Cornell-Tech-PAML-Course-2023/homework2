@@ -193,6 +193,9 @@ if df is not None:
 
     # Display correlation of all feature pairs with description of magnitude and direction of correlation
 
+    # Store dataset in st.session_state
+    # Add code here ...
+
     ###################### DOWNLOAD DATASET #######################
     st.markdown('### Download the dataset')
 
