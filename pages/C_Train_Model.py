@@ -50,16 +50,13 @@ def split_dataset(X, y, number,random_state=45):
         # Split data into train/test split
         # Add code here
         
-        train_percentage = (len(X_train)+len(X_val) /
-                            (len(X_train)+len(X_val)+len(y_train)+len(y_val)))*100
-        test_percentage = ((len(y_train)+len(y_val)) /
-                           (len(X_train)+len(X_val)+len(y_train)+len(y_val)))*100
+        train_percentage = len(X_train)/(len(X_train)+len(X_val))*100
+        test_percentage = len(X_val)/(len(X_train)+len(X_val))*100
 
         # Print dataset split result
-        st.markdown('The training dataset contains {0:.2f} observations ({1:.2f}%) and the test dataset contains {2:.2f} observations ({3:.2f}%).'.format(len(X_train)+len(X_val),
+        st.markdown('The training dataset contains {0:.2f} observations ({1:.2f}%) and the test dataset contains {2:.2f} observations ({3:.2f}%).'.format(len(X_train),
                                                                                                                                                           train_percentage,
-                                                                                                                                                          len(y_train)+len(
-                                                                                                                                                              y_val),
+                                                                                                                                                          len(X_val),
                                                                                                                                                           test_percentage))
         # Save state of train and test splits in st.session_state
         st.session_state['X_train'] = X_train
