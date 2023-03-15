@@ -136,37 +136,6 @@ def create_feature(df, math_select, math_feature_select, new_feature_name):
     st.write('create_feature not implemented yet.')
     return df
 
-# Complete this helper function from HW1
-def compute_descriptive_stats(X, stats_feature_select, stats_select):
-    """
-    This function computes some statistical values of the selected features
-
-    Input: 
-        - X: the pandas dataframe
-        - stats_feature_select: the features to be calculated stats on
-        - stats_select: the stats values to be calculated
-    Output: 
-        - out_dict: a dictionary contains the computed the given stats on the given features, with the following keys and values
-            - 'mean': the mean of each selected feature
-            - 'median': the median of each selected feature
-            - 'max': the max of each selected feature
-            - 'min': the min of each selected feature
-        - output_str: a string contains the stats information (also to be rendered on the page) in the following format:
-            'stats_feature_select[i] stats_select[j]: value    |'
-    """
-    output_str = ''
-    out_dict = {
-        'mean': None,
-        'median': None,
-        'max': None,
-        'min': None
-    }
-
-    # Add code here
-
-    st.write('create_feature not implemented yet.')
-    return output_str, out_dict
-
 # Complete this helper function from HW1 
 def impute_dataset(X, impute_method):
     """
